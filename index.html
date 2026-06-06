@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chris O. Agudosi — AI Security Engineer specializing in Application Security, Penetration Testing, AI Red Teaming, and DevSecOps. OSCP, OSWE certified." />
+  <meta name="author" content="Chris O. Agudosi" />
+  <meta name="theme-color" content="#0a0e16" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Chris O. Agudosi — AI Security Engineer" />
+  <meta property="og:description" content="AI Security Engineer | OSCP | OSWE | AppSec | Applied AI Security" />
+  <meta property="og:type" content="website" />
+
+  <title>Chris O. Agudosi — AI Security Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%A1%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <!-- Animated background canvas -->
+  <canvas id="matrix-bg" aria-hidden="true"></canvas>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-box">
+      <div class="loader-terminal">
+        <span class="loader-prompt">root@agudosi:~$</span>
+        <span class="loader-line">
+          <span class="loader-text" id="loader-text"></span><span class="loader-cursor">_</span>
+        </span>
+      </div>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner">
+      <a href="#hero" class="brand" aria-label="Home">
+        <span class="brand-bracket">&lt;</span>CA<span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">// about</a></li>
+        <li><a href="#skills" class="nav-link">// skills</a></li>
+        <li><a href="#experience" class="nav-link">// experience</a></li>
+        <li><a href="#projects" class="nav-link">// projects</a></li>
+        <li><a href="#certs" class="nav-link">// certs</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">// contact</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <p class="hero-eyebrow">
+            <span class="status-dot"></span> Available for security engagements
+          </p>
+          <h1 class="hero-title">
+            Chris O. <span class="accent">Agudosi</span>
+          </h1>
+          <h2 class="hero-role">
+            <span class="type-prefix">&gt;</span>
+            <span id="typed-role" class="typed"></span><span class="type-caret">|</span>
+          </h2>
+          <p class="hero-desc">
+            AI Security Engineer building offensive and defensive systems where
+            machine learning meets adversarial reality — from LLM red teaming and
+            prompt-injection defense to full-scope penetration testing and DevSecOps automation.
+          </p>
+
+          <div class="hero-badges">
+            <span class="badge">OSCP</span>
+            <span class="badge">OSWE</span>
+            <span class="badge">CEH</span>
+            <span class="badge">CISA</span>
+            <span class="badge">CKA</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="assets/Chris-Agudosi-Resume.pdf" class="btn btn-ghost" download="Chris-Agudosi-Resume.pdf">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              <span>Download CV</span>
+            </a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://github.com/Mrred883" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/onyekachiagudosi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.3a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6S12.6 13 12.6 14.2V19h-3v-9h2.9v1.2h.1a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.7 2 3.7 4.7z"/></svg>
+            </a>
+            <a href="mailto:o.agudosi88@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Terminal card -->
+        <div class="hero-terminal reveal" aria-hidden="true">
+          <div class="terminal-window">
+            <div class="terminal-bar">
+              <span class="tdot red"></span><span class="tdot yellow"></span><span class="tdot green"></span>
+              <span class="terminal-title">agudosi@security:~</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+              <p><span class="t-prompt">$</span> whoami</p>
+              <p class="t-out">chris_agudosi :: ai_security_engineer</p>
+              <p><span class="t-prompt">$</span> cat ./profile.json</p>
+              <p class="t-out t-json">{</p>
+              <p class="t-out t-indent"><span class="t-key">"role"</span>: <span class="t-str">"AI Security Engineer"</span>,</p>
+              <p class="t-out t-indent"><span class="t-key">"focus"</span>: [<span class="t-str">"AI Red Teaming"</span>, <span class="t-str">"AppSec"</span>, <span class="t-str">"VAPT"</span>],</p>
+              <p class="t-out t-indent"><span class="t-key">"certs"</span>: [<span class="t-str">"OSCP"</span>, <span class="t-str">"OSWE"</span>],</p>
+              <p class="t-out t-indent"><span class="t-key">"location"</span>: <span class="t-str">"Remote / Los Angeles"</span>,</p>
+              <p class="t-out t-indent"><span class="t-key">"status"</span>: <span class="t-str t-ok">"online"</span></p>
+              <p class="t-out t-json">}</p>
+              <p><span class="t-prompt">$</span> <span class="t-blink">_</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-bar">
+      <div class="container stats-grid">
+        <div class="stat reveal">
+          <span class="stat-num" data-count="9">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years in Security</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="11">0</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="10">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">GitHub Repositories</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="1200">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Monthly Alerts Triaged</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">01</span>
+          <h2 class="section-title">// about</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm an <strong>AI Security Engineer</strong> operating at the intersection of
+              offensive security and applied machine learning. My work spans the full
+              spectrum — breaking systems through penetration testing and AI red teaming,
+              then rebuilding them with detection engineering, secure SDLC orchestration,
+              and DevSecOps automation.
+            </p>
+            <p>
+              Currently I conduct VAPT across web, Android, API, and thick-client
+              applications, and architect AI-assisted security platforms that cut down
+              repetitive assessment and reporting. I've built LLM-powered triage systems,
+              prompt-injection defenses, and SOAR automations that process thousands of
+              security alerts a month.
+            </p>
+            <p>
+              As founder of <strong>NovusAegis AI</strong>, <strong>ReconPro</strong>, and
+              <strong>God's Eye</strong>, I maintain a portfolio of OSINT, DFIR, malware
+              analysis, and AI-security tooling — including custom IDA Pro plugins and a
+              tactical TAK server for secure situational awareness.
+            </p>
+
+            <div class="about-meta">
+              <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-value">Remote · Los Angeles, CA</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Focus</span>
+                <span class="meta-value">AI Security · AppSec · VAPT</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Education</span>
+                <span class="meta-value">BSc Engineering · First Class Honours</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Status</span>
+                <span class="meta-value"><span class="status-dot"></span>Open to work</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="about-card reveal">
+            <div class="focus-card">
+              <h3 class="focus-title">Core Practice Areas</h3>
+              <ul class="focus-list">
+                <li>
+                  <span class="focus-icon">⌖</span>
+                  <div>
+                    <strong>AI Red Teaming</strong>
+                    <p>Adversarial testing, prompt-injection defense & AI governance for LLM-integrated systems.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="focus-icon">⚔</span>
+                  <div>
+                    <strong>Penetration Testing</strong>
+                    <p>Web, API, Android & thick-client VAPT aligned to OWASP, PTES & CVSS.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="focus-icon">◎</span>
+                  <div>
+                    <strong>Detection Engineering</strong>
+                    <p>SOAR automation, threat hunting & SIEM tuning with Sentinel & Splunk.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="focus-icon">⬡</span>
+                  <div>
+                    <strong>DevSecOps</strong>
+                    <p>Secure SDLC, CI/CD security, IaC & container hardening at scale.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">02</span>
+          <h2 class="section-title">// skills &amp; arsenal</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+          <!-- cards injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">03</span>
+          <h2 class="section-title">// experience</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <!-- items injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">04</span>
+          <h2 class="section-title">// selected projects</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- cards injected via JS -->
+        </div>
+
+        <div class="projects-cta reveal">
+          <p>More tooling & research lives on GitHub —</p>
+          <a href="https://github.com/Mrred883" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            github.com/Mrred883
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section" id="certs">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">05</span>
+          <h2 class="section-title">// certifications</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="certs-grid" id="certs-grid">
+          <!-- injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">06</span>
+          <h2 class="section-title">// contact</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-wrap reveal">
+          <div class="contact-intro">
+            <h3>Let's secure something together.</h3>
+            <p>
+              Whether you need a penetration test, an AI red-team engagement, or a
+              security architecture review — my inbox is open. I typically respond
+              within 24 hours.
+            </p>
+
+            <div class="contact-methods">
+              <a href="mailto:o.agudosi88@gmail.com" class="contact-method">
+                <span class="cm-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                </span>
+                <span class="cm-text">
+                  <span class="cm-label">Email</span>
+                  <span class="cm-value">o.agudosi88@gmail.com</span>
+                </span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/onyekachiagudosi/" target="_blank" rel="noopener noreferrer" class="contact-method">
+                <span class="cm-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.3a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6S12.6 13 12.6 14.2V19h-3v-9h2.9v1.2h.1a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.7 2 3.7 4.7z"/></svg>
+                </span>
+                <span class="cm-text">
+                  <span class="cm-label">LinkedIn</span>
+                  <span class="cm-value">in/onyekachiagudosi</span>
+                </span>
+              </a>
+
+              <a href="https://github.com/Mrred883" target="_blank" rel="noopener noreferrer" class="contact-method">
+                <span class="cm-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                </span>
+                <span class="cm-text">
+                  <span class="cm-label">GitHub</span>
+                  <span class="cm-value">github.com/Mrred883</span>
+                </span>
+              </a>
+
+              <a href="assets/Chris-Agudosi-Resume.pdf" download="Chris-Agudosi-Resume.pdf" class="contact-method">
+                <span class="cm-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                </span>
+                <span class="cm-text">
+                  <span class="cm-label">Résumé</span>
+                  <span class="cm-value">Download PDF</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden-field">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Doe" />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="jane@company.com" />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or engagement..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            <p class="form-note" id="form-note" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand"><span class="brand-bracket">&lt;</span>CA<span class="brand-bracket">/&gt;</span></span>
+        <p>AI Security Engineer · OSCP · OSWE</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">about</a>
+        <a href="#skills">skills</a>
+        <a href="#experience">experience</a>
+        <a href="#projects">projects</a>
+        <a href="#contact">contact</a>
+      </div>
+      <p class="footer-copy">
+        <span class="status-dot"></span>
+        Built &amp; secured by Chris O. Agudosi · <span id="year"></span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-top" id="back-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
