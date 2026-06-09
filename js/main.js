@@ -445,8 +445,6 @@
     const btnHTML = btn ? btn.innerHTML : '';
 
     const setNote = (msg, kind) => { note.innerHTML = msg; note.className = 'form-note' + (kind ? ' ' + kind : ''); };
-    const encode = (obj) => Object.keys(obj)
-      .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -458,7 +456,7 @@
       const message = (fd.get('message') || '').toString().trim();
 
       // Honeypot, silently drop bots
-      if ((fd.get('bot-field') || '').toString().trim() !== '') return;
+      if (fd.get('botcheck')) return;
 
       // Validation
       if (!name || !email || !message) {
@@ -470,20 +468,21 @@
         return;
       }
 
-      // Build payload for Netlify Forms
-      const data = { 'form-name': form.getAttribute('name') || 'contact' };
+      // Build JSON payload for Web3Forms
+      const data = {};
       fd.forEach((v, k) => { data[k] = v.toString(); });
 
       if (btn) { btn.disabled = true; btn.classList.add('loading'); }
       setNote('<span class="dots">Sending message</span>', '');
 
       try {
-        const res = await fetch('/', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode(data)
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
         });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const result = await res.json().catch(() => ({}));
+        if (!res.ok || !result.success) throw new Error(result.message || ('HTTP ' + res.status));
         setNote("✔ Message sent, I'll get back to you within 24 hours.", 'ok');
         form.reset();
       } catch (err) {

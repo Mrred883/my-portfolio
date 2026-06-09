@@ -11,7 +11,7 @@ Built with plain HTML, CSS, and vanilla JavaScript - zero build step, instant de
 - **Scroll-reveal** animations, scroll progress bar, active-section nav highlighting
 - **Fully responsive** - mobile hamburger menu, fluid typography, touch-friendly
 - **Accessible** - semantic HTML, `prefers-reduced-motion` support, keyboard friendly
-- **Netlify contact form** (with graceful `mailto:` fallback for local preview)
+- **Working contact form** via Web3Forms API (with graceful `mailto:` fallback)
 
 ## 📁 Structure
 
@@ -41,8 +41,9 @@ top of [js/main.js](js/main.js) - edit those objects to update the site, no mark
 3. Build command: *(none)* · Publish directory: `.`
 4. Deploy.
 
-The contact form works automatically on Netlify (Forms are auto-detected via the
-`data-netlify="true"` attribute). Submissions appear under **Forms** in the Netlify dashboard.
+The contact form submits via the **Web3Forms** API and emails entries directly to
+o.agudosi88@gmail.com. The access key lives in the hidden `access_key` input in
+[index.html](index.html). Works on any host, no backend required.
 
 ## 🔧 Local preview
 
