@@ -122,6 +122,45 @@
     }
   ];
 
+  const labs = [
+    {
+      icon: '🧪', tag: 'TryHackMe',
+      title: 'TryHackMe Journal',
+      desc: 'Hands-on offensive & defensive lab journal — room walkthroughs, methodology, and key takeaways across the TryHackMe platform.',
+      url: 'https://docs.google.com/document/d/109X6dA24WOrVagjm7TuPsqU5JAKi-HVywlWP6ICRT4I/edit?usp=sharing'
+    },
+    {
+      icon: '🐞', tag: 'Vuln Assessment',
+      title: 'Vulnerable System Analysis',
+      desc: 'Assessment of a deliberately vulnerable system — enumeration, exploitation paths, and prioritized remediation guidance.',
+      url: 'https://docs.google.com/document/d/1IF2t38BsQt6YRvJru8_VKC6Kjp7-YMAjhWNYhRnUDWg/edit?usp=sharing'
+    },
+    {
+      icon: '🚨', tag: 'Incident Response',
+      title: "Incident Handler's Report",
+      desc: 'Structured incident-handling report covering detection, containment, eradication, recovery, and post-incident lessons.',
+      url: 'https://docs.google.com/document/d/1itD3-cEj19Fl30f2lw1GIA--V9HaFTRzD1Qzdmtyjt8/edit?usp=sharing'
+    },
+    {
+      icon: '📑', tag: 'DFIR',
+      title: 'Cyber Incident Report',
+      desc: 'Full cyber incident analysis documenting the timeline, business impact, root cause, and corrective actions.',
+      url: 'https://docs.google.com/document/d/17YOeq0DoncjduYqqJIJFdGxuVDkEEUgIEDosoXPoY_U/edit?usp=sharing'
+    },
+    {
+      icon: '🛡️', tag: 'Audit',
+      title: 'Security Audit',
+      desc: 'Security audit applying controls review, gap analysis, and compliance-aligned recommendations against best practice.',
+      url: 'https://docs.google.com/document/d/1aUwDNPgdSygworUXLP2rFBE41OVUBwwO1REWjMoP6jw/edit?usp=sharing'
+    },
+    {
+      icon: '🗄️', tag: 'Data Forensics',
+      title: 'SQL Query Analysis',
+      desc: 'Database investigation using SQL queries for log analysis, filtering, and security event correlation.',
+      url: 'https://docs.google.com/document/d/1uXju1Rd76Ttb0NyBjGikEyREuv5tZ75uJ9npMgqzrNQ/edit?usp=sharing'
+    }
+  ];
+
   const certs = [
     { abbr: 'OSCP', name: 'Offensive Security Certified Professional', issuer: 'OffSec' },
     { abbr: 'OSWE', name: 'Offensive Security Web Expert', issuer: 'OffSec' },
@@ -188,6 +227,24 @@
             ${p.stack.map(s => `<span>${s}</span>`).join('')}
           </div>
         </article>`).join('');
+    }
+
+    // Labs
+    const lg = $('#labs-grid');
+    if (lg) {
+      lg.innerHTML = labs.map(l => `
+        <a class="lab-card reveal" href="${l.url}" target="_blank" rel="noopener noreferrer">
+          <div class="lab-top">
+            <span class="lab-icon">${l.icon}</span>
+            <span class="lab-tag">${l.tag}</span>
+          </div>
+          <h3 class="lab-title">${l.title}</h3>
+          <p class="lab-desc">${l.desc}</p>
+          <span class="lab-link">
+            Open document
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </span>
+        </a>`).join('');
     }
 
     // Certs
@@ -384,30 +441,61 @@
     const form = $('#contact-form');
     const note = $('#form-note');
     if (!form) return;
+    const btn = form.querySelector('button[type="submit"]');
+    const btnHTML = btn ? btn.innerHTML : '';
 
-    form.addEventListener('submit', (e) => {
-      // If served on Netlify, native form handling will POST.
-      // For local/static preview without Netlify, intercept gracefully.
-      const isNetlify = location.hostname.endsWith('netlify.app') || location.hostname.endsWith('netlify.com');
-      if (isNetlify) return; // let Netlify handle it
+    const setNote = (msg, kind) => { note.innerHTML = msg; note.className = 'form-note' + (kind ? ' ' + kind : ''); };
+    const encode = (obj) => Object.keys(obj)
+      .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
 
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const data = new FormData(form);
-      const name = (data.get('name') || '').toString().trim();
-      const email = (data.get('email') || '').toString().trim();
-      const message = (data.get('message') || '').toString().trim();
+      setNote('', '');
+
+      const fd = new FormData(form);
+      const name = (fd.get('name') || '').toString().trim();
+      const email = (fd.get('email') || '').toString().trim();
+      const message = (fd.get('message') || '').toString().trim();
+
+      // Honeypot — silently drop bots
+      if ((fd.get('bot-field') || '').toString().trim() !== '') return;
+
+      // Validation
       if (!name || !email || !message) {
-        note.textContent = '✖ Please fill in all fields.';
-        note.className = 'form-note err';
+        setNote('✖ Please fill in all fields.', 'err');
         return;
       }
-      // Fallback: open mail client with prefilled content
-      const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-      const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-      window.location.href = `mailto:o.agudosi88@gmail.com?subject=${subject}&body=${body}`;
-      note.textContent = '✔ Opening your email client...';
-      note.className = 'form-note ok';
-      form.reset();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setNote('✖ Please enter a valid email address.', 'err');
+        return;
+      }
+
+      // Build payload for Netlify Forms
+      const data = { 'form-name': form.getAttribute('name') || 'contact' };
+      fd.forEach((v, k) => { data[k] = v.toString(); });
+
+      if (btn) { btn.disabled = true; btn.classList.add('loading'); }
+      setNote('<span class="dots">Sending message</span>', '');
+
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode(data)
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        setNote("✔ Message sent — I'll get back to you within 24 hours.", 'ok');
+        form.reset();
+      } catch (err) {
+        // Network/host can't accept the POST (e.g. local preview or Forms not enabled).
+        // Never lose the message — hand off to the user's email client.
+        const subject = encodeURIComponent('Portfolio inquiry from ' + name);
+        const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+        const mailto = 'mailto:o.agudosi88@gmail.com?subject=' + subject + '&body=' + body;
+        setNote('⚠ Couldn\'t submit here. <a href="' + mailto + '">Click to email me directly</a> instead.', 'err');
+      } finally {
+        if (btn) { btn.disabled = false; btn.classList.remove('loading'); btn.innerHTML = btnHTML; }
+      }
     });
   }
 
