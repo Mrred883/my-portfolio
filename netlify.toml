@@ -1,4 +1,4 @@
-# Netlify configuration — static site, no build step required.
+# Netlify configuration: static site, no build step required.
 [build]
   publish = "."
 

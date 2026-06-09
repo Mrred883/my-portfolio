@@ -1,5 +1,5 @@
 /* ============================================================
-   Chris O. Agudosi — Portfolio interactions
+   Chris O. Agudosi, Portfolio interactions
    ============================================================ */
 (function () {
   'use strict';
@@ -43,10 +43,10 @@
       role: 'Cyber Security Analyst', date: 'Aug 2024 – Present',
       company: 'Manappuram Comptech & Consultants Ltd. · Remote',
       points: [
-        'Conduct <strong>penetration testing</strong> across web, Android, API & thick-client apps using OWASP Top 10, PTES & CVSS — delivering remediation for auth, session & input-validation flaws.',
+        'Conduct <strong>penetration testing</strong> across web, Android, API & thick-client apps using OWASP Top 10, PTES & CVSS, delivering remediation for auth, session & input-validation flaws.',
         'Architected an <strong>AI-assisted VAPT platform</strong> integrating network scanning, web testing, Android analysis & automated vulnerability classification.',
-        'Execute internal & external network VAPT — host discovery, enumeration, controlled exploitation & attack-surface analysis with Nmap, Metasploit, Python & Bash.',
-        'Perform Android pentesting — APK decompilation, SSL pinning bypass & runtime hooking using MobSF, Frida, JADX & ADB.',
+        'Execute internal & external network VAPT, host discovery, enumeration, controlled exploitation & attack-surface analysis with Nmap, Metasploit, Python & Bash.',
+        'Perform Android pentesting, APK decompilation, SSL pinning bypass & runtime hooking using MobSF, Frida, JADX & ADB.',
         'Lead enterprise phishing simulations and validate DAST/SAST findings with secure code review aligned to Secure SDLC.'
       ]
     },
@@ -54,21 +54,21 @@
       role: 'AI Security & DevSecOps Engineer (Contract)', date: 'Jan 2023 – Present',
       company: 'Global · Remote',
       points: [
-        'Designed <strong>AI-assisted Secure SDLC orchestration</strong> with OpenAI APIs, GitHub Actions & Azure DevOps across 12+ repos — cutting manual QA prep 15–18 hrs/sprint.',
-        'Built Prometheus, Grafana, ELK & New Relic dashboards for Kubernetes supporting 40+ microservices & 300+ daily container events — recovery time 2h → ~75min.',
+        'Designed <strong>AI-assisted Secure SDLC orchestration</strong> with OpenAI APIs, GitHub Actions & Azure DevOps across 12+ repos, cutting manual QA prep 15–18 hrs/sprint.',
+        'Built Prometheus, Grafana, ELK & New Relic dashboards for Kubernetes supporting 40+ microservices & 300+ daily container events, recovery time 2h → ~75min.',
         'Constructed an <strong>LLM-powered knowledge platform</strong> with OpenAI embeddings & Pinecone, centralizing 2,500+ docs with AI governance & secure access controls.',
-        'Orchestrated Jenkins, Selenium & Pytest pipelines on AWS staging — regression coverage 45% → 92%.',
-        'Provisioned Terraform AWS/Azure multi-region infra — environment setup ~4h → under 45min.'
+        'Orchestrated Jenkins, Selenium & Pytest pipelines on AWS staging, regression coverage 45% → 92%.',
+        'Provisioned Terraform AWS/Azure multi-region infra, environment setup ~4h → under 45min.'
       ]
     },
     {
       role: 'Security Engineer · AI Defense & Threat Detection', date: 'Mar 2021 – Dec 2023',
       company: 'Global Consulting Firm · Dallas, TX (Remote)',
       points: [
-        'Built <strong>LLM-assisted triage</strong> & Microsoft Sentinel SOAR automations processing 1,200+ monthly alerts — response time 45min → under 10min.',
-        'Deployed Logic Apps playbooks for phishing, endpoint & suspicious-login response — cutting repetitive SOC workload ~60 hrs/month.',
+        'Built <strong>LLM-assisted triage</strong> & Microsoft Sentinel SOAR automations processing 1,200+ monthly alerts, response time 45min → under 10min.',
+        'Deployed Logic Apps playbooks for phishing, endpoint & suspicious-login response, cutting repetitive SOC workload ~60 hrs/month.',
         'Conducted threat detection & incident analysis across cloud using Sentinel, Splunk & MITRE ATT&CK frameworks.',
-        'Engineered Python security scripts for log parsing, IOC extraction & event correlation — investigation time ~20min → under 13min.'
+        'Engineered Python security scripts for log parsing, IOC extraction & event correlation, investigation time ~20min → under 13min.'
       ]
     },
     {
@@ -78,7 +78,7 @@
         'Maintain <strong>10+ GitHub repositories</strong> spanning OSINT, DFIR tooling, malware analysis, VAPT research & AI-security experimentation.',
         'Built a custom <strong>TAK (Tactical Assault Kit) server</strong> for secure situational awareness, real-time mapping & unit tracking.',
         'Developed custom <strong>IDA Pro plugins</strong> & static-analysis utilities accelerating malware triage and executable inspection.',
-        'Support AI systems & automation for government-sector environments — secure workflow orchestration & operational security.'
+        'Support AI systems & automation for government-sector environments, secure workflow orchestration & operational security.'
       ]
     }
   ];
@@ -87,19 +87,19 @@
     {
       icon: '🧬', tag: 'Reverse Engineering',
       title: 'FLARE-ON RE Research',
-      desc: 'Curated reverse-engineering archive covering 10+ years of FLARE-ON challenges — 80+ write-ups analyzing packed executables, obfuscated binaries & malicious scripts.',
+      desc: 'Curated reverse-engineering archive covering 10+ years of FLARE-ON challenges, 80+ write-ups analyzing packed executables, obfuscated binaries & malicious scripts.',
       stack: ['IDA Pro', 'Python', 'Static Analysis']
     },
     {
       icon: '🔓', tag: 'AppSec',
       title: 'Application Security & API Assessment',
-      desc: 'OWASP Top 10 & API penetration testing across auth, session management & input validation — surfacing insecure configs and exposed endpoints.',
+      desc: 'OWASP Top 10 & API penetration testing across auth, session management & input validation, surfacing insecure configs and exposed endpoints.',
       stack: ['Burp Suite', 'OWASP ZAP', 'Manual Testing']
     },
     {
       icon: '🛰️', tag: 'Recon Automation',
       title: 'Offensive Recon Automation',
-      desc: 'Python recon & web-automation tooling using Requests, BeautifulSoup4 & CSV pipelines — processing hundreds of records for OSINT and attack-surface mapping.',
+      desc: 'Python recon & web-automation tooling using Requests, BeautifulSoup4 & CSV pipelines, processing hundreds of records for OSINT and attack-surface mapping.',
       stack: ['Python', 'Requests', 'BeautifulSoup4']
     },
     {
@@ -111,7 +111,7 @@
     {
       icon: '🧠', tag: 'AI Security',
       title: 'AI Security & Adversarial Testing',
-      desc: 'Adversarial testing & prompt-injection assessments across LLM-integrated platforms — validating prompt handling, access controls & model safety.',
+      desc: 'Adversarial testing & prompt-injection assessments across LLM-integrated platforms, validating prompt handling, access controls & model safety.',
       stack: ['LLM Red Team', 'Prompt Injection', 'AI Governance']
     },
     {
@@ -126,13 +126,13 @@
     {
       icon: '🧪', tag: 'TryHackMe',
       title: 'TryHackMe Journal',
-      desc: 'Hands-on offensive & defensive lab journal — room walkthroughs, methodology, and key takeaways across the TryHackMe platform.',
+      desc: 'Hands-on offensive & defensive lab journal, room walkthroughs, methodology, and key takeaways across the TryHackMe platform.',
       url: 'https://docs.google.com/document/d/109X6dA24WOrVagjm7TuPsqU5JAKi-HVywlWP6ICRT4I/edit?usp=sharing'
     },
     {
       icon: '🐞', tag: 'Vuln Assessment',
       title: 'Vulnerable System Analysis',
-      desc: 'Assessment of a deliberately vulnerable system — enumeration, exploitation paths, and prioritized remediation guidance.',
+      desc: 'Assessment of a deliberately vulnerable system, enumeration, exploitation paths, and prioritized remediation guidance.',
       url: 'https://docs.google.com/document/d/1IF2t38BsQt6YRvJru8_VKC6Kjp7-YMAjhWNYhRnUDWg/edit?usp=sharing'
     },
     {
@@ -457,7 +457,7 @@
       const email = (fd.get('email') || '').toString().trim();
       const message = (fd.get('message') || '').toString().trim();
 
-      // Honeypot — silently drop bots
+      // Honeypot, silently drop bots
       if ((fd.get('bot-field') || '').toString().trim() !== '') return;
 
       // Validation
@@ -484,13 +484,13 @@
           body: encode(data)
         });
         if (!res.ok) throw new Error('HTTP ' + res.status);
-        setNote("✔ Message sent — I'll get back to you within 24 hours.", 'ok');
+        setNote("✔ Message sent, I'll get back to you within 24 hours.", 'ok');
         form.reset();
       } catch (err) {
         // Network/host can't accept the POST (e.g. local preview or Forms not enabled).
-        // Never lose the message — hand off to the user's email client.
+        // Never lose the message, hand off to the user's email client.
         const subject = encodeURIComponent('Portfolio inquiry from ' + name);
-        const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+        const body = encodeURIComponent(message + '\n\n- ' + name + ' (' + email + ')');
         const mailto = 'mailto:o.agudosi88@gmail.com?subject=' + subject + '&body=' + body;
         setNote('⚠ Couldn\'t submit here. <a href="' + mailto + '">Click to email me directly</a> instead.', 'err');
       } finally {

@@ -1,16 +1,16 @@
-# Chris O. Agudosi — Cybersecurity Portfolio
+# Chris O. Agudosi - Cybersecurity Portfolio
 
 An interactive, fully responsive single-page portfolio for an **AI Security Engineer**.
-Built with plain HTML, CSS, and vanilla JavaScript — zero build step, instant deploy.
+Built with plain HTML, CSS, and vanilla JavaScript - zero build step, instant deploy.
 
 ## ✨ Features
 
-- **Cyber aesthetic** — animated matrix "digital rain" canvas, grid overlay, glow accents
+- **Cyber aesthetic** - animated matrix "digital rain" canvas, grid overlay, glow accents
 - **Boot loader** + typing hero roles + animated stat counters
 - **Interactive terminal** card, mouse-follow spotlight on skill cards
 - **Scroll-reveal** animations, scroll progress bar, active-section nav highlighting
-- **Fully responsive** — mobile hamburger menu, fluid typography, touch-friendly
-- **Accessible** — semantic HTML, `prefers-reduced-motion` support, keyboard friendly
+- **Fully responsive** - mobile hamburger menu, fluid typography, touch-friendly
+- **Accessible** - semantic HTML, `prefers-reduced-motion` support, keyboard friendly
 - **Netlify contact form** (with graceful `mailto:` fallback for local preview)
 
 ## 📁 Structure
@@ -27,15 +27,15 @@ Portfolio/
 ## 🧩 Editing content
 
 All resume content (skills, experience, projects, certs) lives as data arrays at the
-top of [js/main.js](js/main.js) — edit those objects to update the site, no markup changes needed.
+top of [js/main.js](js/main.js) - edit those objects to update the site, no markup changes needed.
 
 ## 🚀 Deploy to Netlify
 
-**Option A — drag & drop**
+**Option A - drag & drop**
 1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
 2. Drag the entire `Portfolio` folder onto the page. Done.
 
-**Option B — Git (recommended)**
+**Option B - Git (recommended)**
 1. Push this folder to a GitHub repo.
 2. In Netlify: *Add new site → Import from Git* → pick the repo.
 3. Build command: *(none)* · Publish directory: `.`
