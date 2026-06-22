@@ -119,6 +119,13 @@
       title: 'Custom TAK Server',
       desc: 'Built a Tactical Assault Kit server enabling secure situational awareness, real-time mapping & unit tracking across tactical comms environments.',
       stack: ['TAK', 'Infra Security', 'Real-time']
+    },
+    {
+      icon: '🔗', tag: 'Digital Forensics',
+      title: 'Evidence Chain of Custody',
+      desc: 'Tamper-evident system for documenting digital-evidence acquisition, transfer & verification using an append-only hash-chain ledger, file-integrity checks & a full forensic audit trail exposed over a REST API.',
+      stack: ['Python', 'Flask', 'Hash-Chain Ledger'],
+      url: 'https://github.com/Mrred883/evidence-chain-of-custody'
     }
   ];
 
@@ -226,6 +233,10 @@
           <div class="project-stack">
             ${p.stack.map(s => `<span>${s}</span>`).join('')}
           </div>
+          ${p.url ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener noreferrer">
+            View on GitHub
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>` : ''}
         </article>`).join('');
     }
 
