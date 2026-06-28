@@ -475,9 +475,13 @@ body::before {
   padding: 0.22rem 0.55rem; border-radius: 5px; background: rgba(255,255,255,0.03);
   border: 1px solid var(--border);
 }
+.project-links {
+  display: flex; flex-direction: column; gap: 0.55rem;
+  align-items: flex-start; margin-top: 1.2rem;
+}
 .project-link {
-  display: inline-flex; align-items: center; gap: 0.45rem; align-self: flex-start;
-  margin-top: 1.2rem; font-family: var(--font-mono); font-size: 0.82rem;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--font-mono); font-size: 0.82rem;
   font-weight: 700; color: var(--accent);
 }
 .project-link svg { transition: transform 0.25s var(--ease); }

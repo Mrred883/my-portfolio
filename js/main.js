@@ -126,6 +126,14 @@
       desc: 'Tamper-evident system for documenting digital-evidence acquisition, transfer & verification using an append-only hash-chain ledger, file-integrity checks & a full forensic audit trail exposed over a REST API.',
       stack: ['Python', 'Flask', 'Hash-Chain Ledger'],
       url: 'https://github.com/Mrred883/evidence-chain-of-custody'
+    },
+    {
+      icon: '🔎', tag: 'Browser Extension',
+      title: 'AI Fact Checker',
+      desc: 'Chrome extension for real-time, web-grounded fact-checking. Highlight text, scan whole articles or check live audio; claims are verified against live web sources via Claude AI, returning five verdict levels with cited sources.',
+      stack: ['React', 'TypeScript', 'Manifest V3'],
+      url: 'https://github.com/Mrred883/ai-fact-checker',
+      demo: '#' // replace # with Chrome Web Store / install link after deploy
     }
   ];
 
@@ -233,10 +241,16 @@
           <div class="project-stack">
             ${p.stack.map(s => `<span>${s}</span>`).join('')}
           </div>
-          ${p.url ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener noreferrer">
-            View on GitHub
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
-          </a>` : ''}
+          ${(p.url || p.demo) ? `<div class="project-links">
+            ${p.url ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener noreferrer">
+              View on GitHub
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>` : ''}
+            ${p.demo ? `<a class="project-link" href="${p.demo}" target="_blank" rel="noopener noreferrer">
+              Install extension
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>` : ''}
+          </div>` : ''}
         </article>`).join('');
     }
 
