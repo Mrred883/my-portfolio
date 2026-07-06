@@ -133,7 +133,7 @@
       desc: 'Chrome extension for real-time, web-grounded fact-checking. Highlight text, scan whole articles or check live audio; claims are verified against live web sources via Claude AI, returning five verdict levels with cited sources.',
       stack: ['React', 'TypeScript', 'Manifest V3'],
       url: 'https://github.com/Mrred883/ai-fact-checker',
-      demo: '#' // replace # with Chrome Web Store / install link after deploy
+      demo: 'https://chromewebstore.google.com/detail/ai-fact-checker/dcgiggoaljimdoegpmpmfdejknifklgo'
     }
   ];
 
