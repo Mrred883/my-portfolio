@@ -129,11 +129,11 @@
     },
     {
       icon: '🔎', tag: 'Browser Extension',
-      title: 'Litmus Fact Checker',
+      title: 'LitmusAI',
       desc: 'Chrome extension for real-time, web-grounded fact-checking. Highlight text, scan whole articles or check live audio; claims are verified against live web sources via Claude AI, returning five verdict levels with cited sources.',
       stack: ['React', 'TypeScript', 'Manifest V3'],
-      url: 'https://github.com/Mrred883/litmus-fact-checker',
-      demo: 'https://chromewebstore.google.com/detail/ai-fact-checker/dcgiggoaljimdoegpmpmfdejknifklgo'
+      url: 'http://thelitmusai.com/',
+      demo: '#'
     }
   ];
 
@@ -243,7 +243,7 @@
           </div>
           ${(p.url || p.demo) ? `<div class="project-links">
             ${p.url ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener noreferrer">
-              View on GitHub
+              Live website
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>` : ''}
             ${p.demo ? `<a class="project-link" href="${p.demo}" target="_blank" rel="noopener noreferrer">
