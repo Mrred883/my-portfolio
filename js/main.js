@@ -133,7 +133,7 @@
       desc: 'Chrome extension for real-time, web-grounded fact-checking. Highlight text, scan whole articles or check live audio; claims are verified against live web sources via Claude AI, returning five verdict levels with cited sources.',
       stack: ['React', 'TypeScript', 'Manifest V3'],
       url: 'http://thelitmusai.com/',
-      demo: 'https://chromewebstore.google.com/detail/litmusai/gonbdklnoiaknhhajplbpaajpifjicoj'
+      demo: 'https://chromewebstore.google.com/detail/litmusai-ai-fact-checker/gonbdklnoiaknhhajplbpaajpifjicoj'
     }
   ];
 
